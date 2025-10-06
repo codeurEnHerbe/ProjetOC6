@@ -28,7 +28,7 @@ if not os.path.exists(DATA_PATH):
         f.write(response.content)
     print("✅ Dataset téléchargé avec succès.")
     
-user_data = pd.read_csv(DATA_PATH).drop(columns=["TARGET"])
+user_data = pd.read_csv(DATA_PATH)
 
 
 def preprocess(user):
