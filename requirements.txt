@@ -5,3 +5,4 @@ pandas
 joblib
 httpx
 pytest
+requests
