@@ -17,7 +17,7 @@ imputer = joblib.load("imputer.pkl")
 encoders = joblib.load("label_encoders.pkl")
 feature_columns = joblib.load("feature_columns.pkl")
 
-user_data = pd.read_csv("data/application_train.csv").drop(columns=["TARGET"])
+user_data = pd.read_csv("data/application_train_sample.csv").drop(columns=["TARGET"])
 
 
 def preprocess(user):
