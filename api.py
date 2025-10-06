@@ -17,18 +17,7 @@ imputer = joblib.load("imputer.pkl")
 encoders = joblib.load("label_encoders.pkl")
 feature_columns = joblib.load("feature_columns.pkl")
 
-DATA_URL = "https://drive.google.com/uc?export=download&id=1sdFimrMlhSchUL8VgDGlD_L88s1QRqOJ"
-DATA_PATH = "data/application_train.csv"
-
-if not os.path.exists(DATA_PATH):
-    os.makedirs("data", exist_ok=True)
-    print("📥 Téléchargement du dataset depuis Google Drive...")
-    response = requests.get(DATA_URL)
-    with open(DATA_PATH, "wb") as f:
-        f.write(response.content)
-    print("✅ Dataset téléchargé avec succès.")
-    
-user_data = pd.read_csv(DATA_PATH)
+user_data = pd.read_csv("data/application_train.csv").drop(columns=["TARGET"])
 
 
 def preprocess(user):
