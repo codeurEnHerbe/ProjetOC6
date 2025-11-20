@@ -5,6 +5,11 @@ from fastapi import FastAPI
 from sklearn.preprocessing import LabelEncoder
 import os
 import requests
+import warnings
+from sklearn.exceptions import InconsistentVersionWarning
+
+warnings.filterwarnings("ignore", category=InconsistentVersionWarning)
+
 
 app = FastAPI(title="Credit Scoring API test", version="1.0")
 
