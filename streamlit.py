@@ -5,7 +5,6 @@ st.title("Credit Scoring App")
 
 st.write("Entrez les données du client :")
 
-# Exemple simplifié : tu ajoutes les champs de ton dataset
 age = st.number_input("Age", min_value=18, max_value=100, value=30)
 income = st.number_input("Revenu", min_value=0, value=50000)
 

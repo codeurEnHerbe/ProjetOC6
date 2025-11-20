@@ -23,7 +23,7 @@ user_data = pd.read_csv("data/application_train_sample.csv").drop(columns=["TARG
 def preprocess(user):
     for col, le in encoders.items():
         if col in user.columns:
-            user[cwol] = le.transform(user[col])
+            user[col] = le.transform(user[col])
     user = pd.get_dummies(user)
     user = user.reindex(columns=feature_columns, fill_value=0)
     return user
